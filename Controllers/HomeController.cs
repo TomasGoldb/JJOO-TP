@@ -35,7 +35,6 @@ public class HomeController : Controller
     {
         return View("deportes");
     }
-
     public IActionResult AgregarDeportista()
     {
         return View("agregardeportista");//CONTINUAR
