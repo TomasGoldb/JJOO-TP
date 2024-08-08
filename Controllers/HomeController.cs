@@ -27,6 +27,28 @@ public class HomeController : Controller
     {
         return View("creditos");
     }
+    public IActionResult Paises()
+    {
+        return View("paises");
+    }
+    public IActionResult Deportes()
+    {
+        return View("deportes");
+    }
+
+    public IActionResult AgregarDeportista()
+    {
+        return View("agregardeportista");//CONTINUAR
+    }
+    public IActionResult EliminarDeportista(int idCandidato)
+    {
+        return View("index");
+    }
+    public IActionResult VerDetalleDeportista(int idDeportista)
+    {
+        
+        return View("detalledeportista");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
