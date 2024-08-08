@@ -46,7 +46,6 @@ public class HomeController : Controller
     }
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
-        
         return View("detalledeportista");
     }
 
