@@ -47,6 +47,10 @@ public class HomeController : Controller
     {
         return View("detalledeportista");
     }
+    public IActionResult VerDetallePais(int idPais)
+    {
+        return View("detallepais");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
