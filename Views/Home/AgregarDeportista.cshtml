@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Agregar deportista";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Agregar deportista</h1>
+    <form action='@Url.Action("GuardarDeportista", "Home")'>
+        <p>Apellido</p>
+        <input type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"><br>
+        <p>Nombre</p>
+        <input type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> <br>
+        <p>Fecha de nacimiento (ingresar año, mes y día separados entre comas, sin espacios)</p>
+        <input type="text" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"><br>
+        <p>Imagen</p>
+        <input type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
+        <p>País</p>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Elegí un país</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <p>Deporte</p>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Elegí el deporte</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </form>
+</div>
