@@ -37,23 +37,35 @@ namespace JJOO_TP.Models
         }
         public static List<Deportista> ListarDeportistasDeporte(int IdDeporte)
         {
+            List<Deportista> ListaDeportistasDeporte = new List<Deportista>();
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Deportista> listaDep = new List<Deportista>();
-                string sql = "select * from deportistas where IdDeporte=@pIdDeporte";
-                listaDep = db.Query<Deportista>(sql, new { pIdDeporte = IdDeporte }).ToList();
-                return listaDep;
+                string sql = $"SELECT * FROM DEPORTISTAS WHERE  IdDeporte=@pIdDeporte";
+                ListaDeportistasDeporte = db.Query<Deportista>(sql, new { pIdDeporte = IdDeporte }).ToList();
             }
+            return ListaDeportistasDeporte;
         }
         public static List<Pais> ListarPaises()
         {
+            List<Pais> listaPais = new List<Pais>();
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Pais> listaPais = new List<Pais>();
                 string sql = "select * from pais";
                 listaPais = db.Query<Pais>(sql).ToList();
-                return listaPais;
+                
             }
+            return listaPais;
+        }
+        public static List<Deporte> ListarDeportes()
+        {
+            List<Deporte> listaDeportes = new List<Deporte>();
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "select * from pais";
+                listaDeportes = db.Query<Deporte>(sql).ToList();
+                
+            }
+            return listaDeportes;
         }
         public static Deporte VerInfoDeporte(int idDeporte)
         {
@@ -79,7 +91,8 @@ namespace JJOO_TP.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Pais> listaDep = new List<Pais>();
+                List<Pais> listaDep = new
+                 List<Pais>();
                 string sql = "select * from deportistas where IdPais=@pIdPais";
                 listaDep = db.Query<Pais>(sql, new { pIdPais = idPais }).ToList();
                 return listaDep;
