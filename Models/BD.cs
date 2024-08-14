@@ -10,15 +10,15 @@ namespace JJOO_TP.Models
 
 
 
-        public static List<Deportista> ListarDeportistasPais(int IdPais)
+       public static List<Deportista> ListarDeportistasPais(int idPais)
         {
+            List<Deportista> ListaDeportistas = new List<Deportista>();
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Deportista> listaDep = new List<Deportista>();
-                string sql = "select * from deportistas where IdPais=@pIdPais";
-                listaDep = db.Query<Deportista>(sql, new{pIdPais=IdPais}).ToList();
-                return listaDep;
+                string sql = $"SELECT * FROM DEPORTISTAS WHERE @pidPais = idPais";
+                ListaDeportistas = db.Query<Deportista>(sql).ToList();
             }
+            return ListaDeportistas;
         }
         public static List<Deportista> ListarDeportistasDeporte(int IdDeporte)
         {
@@ -71,24 +71,7 @@ namespace JJOO_TP.Models
             }
         }
 
-
-        public static void CrearUsuario(Usuario objeto)
-        {
-            using (SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = $"INSERT INTO Usuario(Nombre,Nick,Contrasena,Mail) VALUES('{objeto.Nombre}','{objeto.Nick}','{objeto.GetContrasena()}','{objeto.GetMail()}')";
-                db.Execute(sql, new { Nombre = objeto.Nombre, Nick = objeto.Nick, Contrasena = objeto.GetContrasena(), Mail = objeto.GetMail() });
-            }
-        }
-
-        public static void UpdateFotoPerfil(Usuario objeto)
-        {
-            using (SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = $"UPDATE usuario SET FotoPerfil='{objeto.FotoPerfil}' where mail='{objeto.GetMail()}'";
-                db.Execute(sql);
-            }
-        }
+         
 
 
 
