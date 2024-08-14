@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Ver Detalle Pais";
+}
+
+@{
+    for(int i = 0; i < 2; i++)
+    {
+        <div class="container text-center">
+        @{
+            if((double)i % 2 != 0)
+            {
+                <div class="row">
+                    <div class="col">
+                    @i
+                    </div>
+            }
+            else
+            {
+                    <div class="col-6">
+                    @i
+                    </div>
+                </div>
+            }
+        }
+        </div>
+    }
+}
