@@ -52,18 +52,18 @@ public class HomeController : Controller
     {
         ViewBag.deporte = BD.VerInfoDeporte(idDeporte);
         ViewBag.listaDeportistasDeporte = BD.ListarDeportistasDeporte(idDeporte);
-        return View("detalledeporte");
+        return View("verdetalledeporte");
     }
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.deportista = BD.VerInfoDeportista(idDeportista);
-        return View("detalledeportista");
+        return View("verdetalledeportista");
     }
     public IActionResult VerDetallePais(int idPais)
     {
-        ViewBag.pais = BD.VerInfoPais(idPais);
-        ViewBag.listaDeportistasPais = BD.ListarDeportistasPais(idPais);
-        return View("detallepais");
+        /*ViewBag.pais = BD.VerInfoPais(idPais);
+        ViewBag.listaDeportistasPais = BD.ListarDeportistasPais(idPais);*/
+        return View("verdetallepais");
     }
     public IActionResult Historia()
     {

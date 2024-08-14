@@ -3,7 +3,7 @@
 }
 
 @{
-    for(int i = 0; i < 2; i++)
+    for(int i = 0; i < ViewBag.listaDeportistasPais.Count; i++)
     {
         <div class="container text-center">
         @{
@@ -11,13 +11,10 @@
             {
                 <div class="row">
                     <div class="col">
-                    @i
+                    a
                     </div>
-            }
-            else
-            {
                     <div class="col-6">
-                    @i
+                    a
                     </div>
                 </div>
             }
