@@ -51,6 +51,10 @@ public class HomeController : Controller
     {
         return View("detallepais");
     }
+    public IActionResult Historia()
+    {
+        return View("historia");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
