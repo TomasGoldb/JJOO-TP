@@ -9,8 +9,23 @@ namespace JJOO_TP.Models
 
 
 
-
-       public static List<Deportista> ListarDeportistasPais(int idPais)
+        public static void AgregarDeportista(Deportista dep)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = $"INSERT INTO deportista(IdDeportista,Apellido,Nombre,FechaNacimiento,Foto,IdPais,IdDeporte) VALUES (@pIdDeportista,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pIdPais,@pIdDeporte)'";
+                db.Execute(sql, new { pIdDeportista = dep.IdDeportista, pApellido = dep.Apellido, pNombre = dep.Nombre, pFechaNacimiento = dep.FechaNacimiento, pFoto = dep.Foto, pIdPais = dep.IdPais, pIdDeporte = dep.IdDeporte });
+            }
+        }
+        public static void EliminarDeportista(int idDeportista)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = $"DELETE * FROM DEPORTISTAS WHERE @pidDeportista = idDeportista";
+                db.Execute(sql, new {pIdDeportista = idDeportista});
+            }
+        }
+        public static List<Deportista> ListarDeportistasPais(int idPais)
         {
             List<Deportista> ListaDeportistas = new List<Deportista>();
             using (SqlConnection db = new SqlConnection(_connectionString))
@@ -26,7 +41,7 @@ namespace JJOO_TP.Models
             {
                 List<Deportista> listaDep = new List<Deportista>();
                 string sql = "select * from deportistas where IdDeporte=@pIdDeporte";
-                listaDep = db.Query<Deportista>(sql, new{pIdDeporte=IdDeporte}).ToList();
+                listaDep = db.Query<Deportista>(sql, new { pIdDeporte = IdDeporte }).ToList();
                 return listaDep;
             }
         }
@@ -40,15 +55,25 @@ namespace JJOO_TP.Models
                 return listaPais;
             }
         }
-        public static List<Deportista> VerInfoDeportista(int idDeportista)
+        public static Deporte VerInfoDeporte(int idDeporte)
         {
+            Deporte deporte = null;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Deportista> listaDep = new List<Deportista>();
                 string sql = "select * from deportistas where IdDeportista=@pIdDeportista";
-                listaDep = db.Query<Deportista>(sql, new{pIdDeportista=idDeportista}).ToList();
-                return listaDep;
+                deporte = db.QueryFirstOrDefault<Deporte>(sql, new { pIdDeportista = idDeporte });
             }
+            return deporte;
+        }
+        public static Deportista VerInfoDeportista(int idDeportista)
+        {
+            Deportista deportista = null;
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "select * from deportistas where IdDeportista=@pIdDeportista";
+                deportista = db.QueryFirstOrDefault<Deportista>(sql, new {pIdDeportista = idDeportista});
+            }
+            return deportista;
         }
         public static List<Pais> VerInfoPais(int idPais)
         {
@@ -56,21 +81,14 @@ namespace JJOO_TP.Models
             {
                 List<Pais> listaDep = new List<Pais>();
                 string sql = "select * from deportistas where IdPais=@pIdPais";
-                listaDep = db.Query<Pais>(sql, new{pIdPais=idPais}).ToList();
+                listaDep = db.Query<Pais>(sql, new { pIdPais = idPais }).ToList();
                 return listaDep;
             }
         }
-        
-        public static void AgregarDeportista(Deportista dep)
-        {
-            using (SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql = $"INSERT INTO deportista(IdDeportista,Apellido,Nombre,FechaNacimiento,Foto,IdPais,IdDeporte) VALUES (@pIdDeportista,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pIdPais,@pIdDeporte)'";
-                db.Execute(sql, new { pIdDeportista = dep.IdDeportista, pApellido = dep.Apellido, pNombre = dep.Nombre, pFechaNacimiento = dep.FechaNacimiento, pFoto = dep.Foto, pIdPais = dep.IdPais, pIdDeporte = dep.IdDeporte });
-            }
-        }
 
-         
+
+
+
 
 
 
