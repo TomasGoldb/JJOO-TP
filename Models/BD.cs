@@ -58,7 +58,7 @@ namespace JJOO_TP.Models
             List<Deporte> listaDeportes = new List<Deporte>();
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "select * from deport";
+                string sql = "select * from deporte";
                 listaDeportes = db.Query<Deporte>(sql).ToList();
             }
             return listaDeportes;
