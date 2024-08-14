@@ -7,8 +7,6 @@ namespace JJOO_TP.Models
     {
         private static string _connectionString { get; set; } = @"Server=A-PHZ2-CIDI-24;DataBase=JJOO;Trusted_Connection=true;";
 
-
-
         public static void AgregarDeportista(Deportista dep)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
@@ -52,7 +50,6 @@ namespace JJOO_TP.Models
             {
                 string sql = "select * from pais";
                 listaPais = db.Query<Pais>(sql).ToList();
-                
             }
             return listaPais;
         }
@@ -63,7 +60,6 @@ namespace JJOO_TP.Models
             {
                 string sql = "select * from pais";
                 listaDeportes = db.Query<Deporte>(sql).ToList();
-                
             }
             return listaDeportes;
         }

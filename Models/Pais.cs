@@ -5,6 +5,11 @@ public class Pais
     public string Bandera {get; set;}
     public DateTime FechaFundacion {get; set;}
 
+    public Pais()
+    {
+        
+    }
+    
     public Pais(int idPais, string nombre, string bandera, DateTime fechaFundacion)
     {
         IdPais = idPais;
