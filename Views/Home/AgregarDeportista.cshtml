@@ -14,18 +14,21 @@
         <p>Imagen</p>
         <input type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
         <p>País</p>
+        
         <select class="form-select" aria-label="Default select example">
-            <option selected>Elegí un país</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option selected="default">Elegí un país</option>
+            @foreach (Pais p in ViewBag.listaPaises)
+            {
+                <option>@p.Nombre</option>
+            }
         </select>
         <p>Deporte</p>
         <select class="form-select" aria-label="Default select example">
-            <option selected>Elegí el deporte</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+        <option selected="default">Elegí un país</option>
+            @foreach (Deporte d in ViewBag.listaDeportes)
+            {
+                <option>@d.Nombre</option>
+            }
         </select>
     </form>
 </div>
