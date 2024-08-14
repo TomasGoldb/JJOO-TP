@@ -54,13 +54,14 @@ namespace JJOO_TP.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Pais> listaDep = new List<Pais>();
+                List<Pais> listaDep = new
+                 List<Pais>();
                 string sql = "select * from deportistas where IdPais=@pIdPais";
                 listaDep = db.Query<Pais>(sql, new{pIdPais=idPais}).ToList();
                 return listaDep;
             }
         }
-        
+
         public static void AgregarDeportista(Deportista dep)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
