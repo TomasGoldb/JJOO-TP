@@ -12,6 +12,10 @@
   font-weight: normal;
   
 }
+@font-face {
+  font-family: "myfont";
+  src: url("/OlympicSans-Bold.woff") format('woff');
+}
 
 @font-face {
   font-display: swap;
@@ -26,8 +30,7 @@ html {
 }
 *{
   margin: 0px;
-  padding:0px;
-  border: 1px solid black;
+  padding:0px; 
 
 }
 
@@ -54,8 +57,24 @@ body {
 
 
 /* ESTO HAY QUE ARREGLARLO */
+header{
+  box-shadow: 0px 1px 13px 3px rgb(0 0 0 / 23%);
+  position: fixed;
+  width: 100vw;
+}
+.navbar-nav{
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+}
 .nav-item{
   padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.1s ease-in;
+}
+.nav-item a{
+  font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.1vw;
 }
 
 .nav-item:hover{
@@ -65,7 +84,8 @@ h1{
   /* font-family: 'Olympic Serif', Helvetica, sans-serif; */
 }
 p{
-  font-family: "Olympic HeadLine";
+  font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
  
 .titulo-index{
@@ -75,6 +95,8 @@ p{
 }
 .titulo-index .conjunto-interno{
   width: 80%;
+  
+  margin-top: 6%;
 
 }
 .titulo-index .conjunto-interno p{
@@ -91,6 +113,7 @@ p{
   display: flex;
   width: 100%;
     justify-content: space-around;
+    align-items: center;
 }
 
 .titulo-index .conjunto-interno p{
@@ -103,7 +126,7 @@ p{
 .section-fotofondo{
   background-image: linear-gradient(rgb(0 0 0 / 21%), rgb(0 0 0 / 0%)), url("https://img.olympics.com/images/image/private/t_s_pog_overview_hero_xl/f_auto/primary/mk0vuxgrzgr7e8itpj5i");
   background:cover;
-  height: 60vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -115,13 +138,15 @@ p{
   color: white;
 }
 .section-fotofondo div{
-  width: 80%;
+  width: 70%;
   margin-top: 6%;
 }
 .section-fotofondo div h1{
   font-size: 6vw;
+  width: 60%;
+  line-height: 5vw;
 }
 .section-fotofondo div p{
-  font-size: 2vw;
+  font-size: 1.5vw;
 
 }
