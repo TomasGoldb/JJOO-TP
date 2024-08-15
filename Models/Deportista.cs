@@ -24,4 +24,13 @@ public class Deportista
         IdPais = idpais;
         IdDeporte = idDeporte;
     }
+    public Deportista(string apellido, string nombre, DateTime fechaNacimiento, string foto, int idpais, int idDeporte)
+    {
+        Apellido = apellido;
+        Nombre = nombre;
+        FechaNacimiento = fechaNacimiento;
+        Foto = foto;
+        IdPais = idpais;
+        IdDeporte = idDeporte;
+    }
 }

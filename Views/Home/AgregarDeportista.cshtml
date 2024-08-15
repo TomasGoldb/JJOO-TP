@@ -1,34 +1,37 @@
 @{
     ViewData["Title"] = "Agregar deportista";
 }
-
-<div class="text-center">
+<section>
+    <div class="text-center">
     <h1 class="display-4">Agregar deportista</h1>
-    <form action='@Url.Action("GuardarDeportista", "Home")'>
-        <p>Apellido</p>
-        <input type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"><br>
-        <p>Nombre</p>
-        <input type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> <br>
-        <p>Fecha de nacimiento (ingresar año, mes y día separados entre comas, sin espacios)</p>
-        <input type="text" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"><br>
-        <p>Imagen</p>
-        <input type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
-        <p>País</p>
-        
-        <select class="form-select" aria-label="Default select example">
-            <option selected="default">Elegí un país</option>
-            @foreach (Pais p in ViewBag.listaPaises)
-            {
-                <option>@p.Nombre</option>
-            }
-        </select>
-        <p>Deporte</p>
-        <select class="form-select" aria-label="Default select example">
-        <option selected="default">Elegí un país</option>
-            @foreach (Deporte d in ViewBag.listaDeportes)
-            {
-                <option>@d.Nombre</option>
-            }
-        </select>
-    </form>
-</div>
+    
+            <div class="contenedor"> 
+            <form action='@Url.Action("GuardarDeportista", "Home")' class="formañadir" method="post">
+                <p>Apellido</p>
+                <input class="textoinput" type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"><br>
+                <p>Nombre</p>
+                <input class="textoinput" type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> <br>
+                <p>Fecha de nacimiento (ingresar año, mes y día separados entre comas, sin espacios)</p>
+                <input class="textoinput" type="date" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"><br>
+                <p>Imagen</p>
+                <input class="textoinput" type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
+                <p>País</p>
+                
+                <select name="Pais" class="form-select opcionmultiple" aria-label="Default select example">
+                    @foreach (Pais p in ViewBag.listaPaises)
+                    {
+                        <option>@p.Nombre</option>
+                    }
+                </select>
+                <p>Deporte</p>
+                <select name="Deporte" class="form-select opcionmultiple" aria-label="Default select example">
+                    @foreach (Deporte d in ViewBag.listaDeportes)
+                    {
+                        <option>@d.Nombre</option>
+                    }
+                </select>
+                <input type="submit" class="enviarañadirdeportista" value="Enviar">
+            </form>
+        </div>
+    </div>
+</section>
