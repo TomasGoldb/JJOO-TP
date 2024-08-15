@@ -11,8 +11,8 @@ namespace JJOO_TP.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = $"INSERT INTO deportista(IdDeportista,Apellido,Nombre,FechaNacimiento,Foto,IdPais,IdDeporte) VALUES (@pIdDeportista,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pIdPais,@pIdDeporte)'";
-                db.Execute(sql, new { pIdDeportista = dep.IdDeportista, pApellido = dep.Apellido, pNombre = dep.Nombre, pFechaNacimiento = dep.FechaNacimiento, pFoto = dep.Foto, pIdPais = dep.IdPais, pIdDeporte = dep.IdDeporte });
+                string sql = "INSERT INTO deportista(Apellido,Nombre,FechaNacimiento,Foto,IdPais,IdDeporte) VALUES (@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pIdPais,@pIdDeporte)";
+                db.Execute(sql, new { pApellido = dep.Apellido, pNombre = dep.Nombre, pFechaNacimiento = dep.FechaNacimiento, pFoto = dep.Foto, pIdPais = dep.IdPais, pIdDeporte = dep.IdDeporte });
             }
         }
         public static void EliminarDeportista(int idDeportista)
@@ -104,5 +104,32 @@ namespace JJOO_TP.Models
                 return pais;
             }
         }
+        public static int GetIdPais(string Nombre)
+        {
+            int idPais;
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "select idPais from Pais where Nombre = @pnombre" ;
+                idPais = db.QueryFirstOrDefault<int>(sql, new {pnombre = Nombre});
+            }
+            return idPais;
+        }
+        public static int GetIdDeporte(string nombre)
+        {
+            int idDeporte;
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "select idDeporte from Deporte where Nombre = @pnombre";
+                idDeporte = db.QueryFirstOrDefault<int>(sql, new {pnombre = nombre});
+            }
+            return idDeporte;
+        }
+
+
+
+
+
+
+
     }
 }

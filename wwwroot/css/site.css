@@ -31,6 +31,7 @@ html {
 *{
   margin: 0px;
   padding:0px; 
+  /*border: 1px solid black;*/
 
 }
 
@@ -180,3 +181,81 @@ p{
 {
   margin-top: 32vh;
 }
+
+.contenedor{
+  margin-top:4%; 
+  margin-left:16%;
+  width:70%;
+  background-color:antiquewhite;
+  border-radius:2px;
+}
+.formañadir{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.formañadir .textoinput{
+  margin-top:0%;
+  margin-bottom:1%;
+  width:35%;
+}
+.formañadir .opcionmultiple{
+  width:20%;
+  display:flex;
+  margin-left:40%;
+}
+.formañadir .enviarañadirdeportista{
+  margin-top:1%;
+  margin-bottom:2%;
+}
+.todalapagina{
+  margin-top:1%;
+}
+
+.banderas-paises{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banderas-paises .conjunto-banderas{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.banderas-paises .conjunto-banderas .banderita{
+  width: 15%;
+  margin-bottom: 1%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  transition: filter 0.2s ease-in;
+  position: relative;
+}
+.banderas-paises .conjunto-banderas .banderita .banderitaimagen{
+   height:100%;
+   width:auto;
+   max-width: 100%;
+   max-height: 100%;
+   transition: opacity 0.1s ease-in;
+}
+.banderas-paises .conjunto-banderas .banderita .banderitanombre{
+  opacity:0;
+  font-size: 2vw;
+  font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
+  position: absolute;
+  left: 10px;
+  transition: opacity 0.1s ease-in;
+}
+.banderas-paises .conjunto-banderas .banderita:hover .banderitanombre{
+  opacity:1;
+}
+.banderas-paises .conjunto-banderas .banderita:hover .banderitaimagen{
+  opacity:0.3;
+}
+
