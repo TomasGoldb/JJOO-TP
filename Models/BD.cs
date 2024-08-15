@@ -5,7 +5,7 @@ namespace JJOO_TP.Models
 {
     public static class BD
     {
-        private static string _connectionString { get; set; } = @"Server=A-PHZ2-CIDI-24;DataBase=JJOO;Trusted_Connection=true;";
+        private static string _connectionString { get; set; } = @"Server=A-PHZ2-CIDI-23;DataBase=JJOO;Trusted_Connection=true;";
 
         public static void AgregarDeportista(Deportista dep)
         {
@@ -19,7 +19,7 @@ namespace JJOO_TP.Models
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = $"DELETE * FROM DEPORTISTAS WHERE @pidDeportista = idDeportista";
+                string sql = $"DELETE * FROM DEPORTISTA WHERE @pidDeportista = idDeportista";
                 db.Execute(sql, new {pIdDeportista = idDeportista});
             }
         }
@@ -28,8 +28,8 @@ namespace JJOO_TP.Models
             List<Deportista> ListaDeportistas = new List<Deportista>();
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = $"SELECT * FROM DEPORTISTAS WHERE @pidPais = idPais";
-                ListaDeportistas = db.Query<Deportista>(sql).ToList();
+                string sql = $"SELECT * FROM DEPORTISTA WHERE IdPais = @pidPais";
+                ListaDeportistas = db.Query<Deportista>(sql, new {pidPais = idPais}).ToList();
             }
             return ListaDeportistas;
         }
@@ -38,7 +38,7 @@ namespace JJOO_TP.Models
             List<Deportista> ListaDeportistasDeporte = new List<Deportista>();
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = $"SELECT * FROM DEPORTISTAS WHERE  IdDeporte=@pIdDeporte";
+                string sql = $"SELECT * FROM DEPORTISTA WHERE  IdDeporte=@pIdDeporte";
                 ListaDeportistasDeporte = db.Query<Deportista>(sql, new { pIdDeporte = IdDeporte }).ToList();
             }
             return ListaDeportistasDeporte;
@@ -79,7 +79,7 @@ namespace JJOO_TP.Models
             Deporte deporte = null;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "select * from deportistas where IdDeportista=@pIdDeportista";
+                string sql = "select * from deportista where IdDeportista=@pIdDeportista";
                 deporte = db.QueryFirstOrDefault<Deporte>(sql, new { pIdDeportista = idDeporte });
             }
             return deporte;
@@ -89,28 +89,20 @@ namespace JJOO_TP.Models
             Deportista deportista = null;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "select * from deportistas where IdDeportista=@pIdDeportista";
+                string sql = "select * from deportista where IdDeportista=@pIdDeportista";
                 deportista = db.QueryFirstOrDefault<Deportista>(sql, new {pIdDeportista = idDeportista});
             }
             return deportista;
         }
-        public static List<Pais> VerInfoPais(int idPais)
+        public static Pais VerInfoPais(int idPais)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                List<Pais> listaDep = new
-                 List<Pais>();
-                string sql = "select * from deportistas where IdPais=@pIdPais";
-                listaDep = db.Query<Pais>(sql, new { pIdPais = idPais }).ToList();
-                return listaDep;
+                Pais pais = null;
+                string sql = "select * from pais where idPais = @pIdPais";
+                pais = db.QueryFirstOrDefault<Pais>(sql, new { pIdPais = idPais });
+                return pais;
             }
         }
-
-
-
-
-
-
-
     }
 }

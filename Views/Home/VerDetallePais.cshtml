@@ -2,23 +2,56 @@
     ViewData["Title"] = "Ver Detalle Pais";
 }
 
-@{
-    for(int i = 0; i < ViewBag.listaDeportistasPais.Count; i++)
-    {
-        <div class="container text-center">
+<section class="detallePais">
+    <h1>@ViewBag.pais.Nombre</h1>
+    <p>Fecha de fundación: @ViewBag.pais.FechaFundacion.ToShortDateString()</p>
+    <img src=@ViewBag.pais.Bandera>
+    <h1 class="tituloDeportistas">Deportistas</h1>
+    <div class="container text-center">
         @{
-            if((double)i % 2 != 0)
+            double repeticiones = ViewBag.listaDeportistasPais.Count;
+            for(int i = 0; i < repeticiones / 4; i++)
             {
-                <div class="row">
-                    <div class="col">
-                    a
+                @if(i * 4 < repeticiones && i * 4 + 1 >= repeticiones)
+                {
+                    <div class="row">
+                        <div class="col columna">
+                            @ViewBag.listaDeportistasPais[i].Nombre
+                        </div>
                     </div>
-                    <div class="col-6">
-                    a
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-5 columna">
+                            @ViewBag.listaDeportistasPais[i].Nombre
+                        </div>
+                        <div class="col-7 columna">
+                            @ViewBag.listaDeportistasPais[i + 1].Nombre
+                        </div>
                     </div>
-                </div>
+                }
+                    
+                @if(i * 4 + 2 < repeticiones && i * 4 + 3 < repeticiones)
+                {
+                    <div class="row">
+                        <div class="col-7 columna">
+                            @ViewBag.listaDeportistasPais[i + 2].Nombre
+                        </div>
+                        <div class="col-5 columna">
+                            @ViewBag.listaDeportistasPais[i + 3].Nombre
+                        </div>
+                    </div>
+                }
+                else if (i * 4 + 2 < repeticiones && i * 4 + 3 >= repeticiones)
+                {
+                    <div class="row">
+                        <div class="col columna">
+                            @ViewBag.listaDeportistasPais[i + 2].Nombre
+                        </div>
+                    </div>
+                }
             }
         }
-        </div>
-    }
-}
+    </div>
+</section>
