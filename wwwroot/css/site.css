@@ -147,7 +147,7 @@ p{
   font-size: 1.5vw;
 
 }
-<<<<<<< HEAD
+
 .contenedor{
   margin-top:4%; 
   margin-left:16%;
@@ -175,10 +175,6 @@ p{
 .todalapagina{
   margin-top:1%;
 }
-.text-center{
-  
-}
-=======
 
 .banderas-paises{
   width: 100vw;
@@ -226,7 +222,6 @@ p{
   opacity:1;
 }
 .banderas-paises .conjunto-banderas .banderita:hover .banderitaimagen{
-  opacity:0.3
-
+  opacity:0.3;
 }
->>>>>>> 670c4a4f869ff7401ebad40e130129c4e10fec67
+

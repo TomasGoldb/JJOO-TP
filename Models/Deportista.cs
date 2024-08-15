@@ -24,13 +24,13 @@ public class Deportista
         IdPais = idpais;
         IdDeporte = idDeporte;
     }
-    public Deportista(string apellido, string nombre, DateTime fechaNacimiento, string foto, int idpais, int idDeporte)
+    public Deportista(string apellido, string nombre, DateTime fechaNacimiento, string foto, int idPais, int idDeporte)
     {
         Apellido = apellido;
         Nombre = nombre;
         FechaNacimiento = fechaNacimiento;
         Foto = foto;
-        IdPais = idpais;
+        IdPais = idPais;
         IdDeporte = idDeporte;
     }
 }

@@ -20,14 +20,14 @@
                 <select name="Pais" class="form-select opcionmultiple" aria-label="Default select example">
                     @foreach (Pais p in ViewBag.listaPaises)
                     {
-                        <option>@p.Nombre</option>
+                        <option value="@p.IdPais">@p.Nombre</option>
                     }
                 </select>
                 <p>Deporte</p>
                 <select name="Deporte" class="form-select opcionmultiple" aria-label="Default select example">
                     @foreach (Deporte d in ViewBag.listaDeportes)
                     {
-                        <option>@d.Nombre</option>
+                        <option value="@d.IdDeporte">@d.Nombre</option>
                     }
                 </select>
                 <input type="submit" class="enviarañadirdeportista" value="Enviar">

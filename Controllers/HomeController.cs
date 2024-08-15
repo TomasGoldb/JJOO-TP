@@ -69,16 +69,13 @@ public class HomeController : Controller
     {
         return View("historia");
     }
-    public IActionResult GuardarDeportista(string Apellido, string Nombre, string FechaNacimiento, string Foto, string Pais, string Deporte)
+    public IActionResult GuardarDeportista(string Apellido, string Nombre, string FechaNacimiento, string Foto, int Pais, int Deporte)
     {   
         DateTime fechaNacimiento = DateTime.Parse(FechaNacimiento);
-        int idPais = BD.GetIdPais(Pais);
-        int idDeporte = BD.GetIdDeporte(Deporte);
-        Deportista dep = new Deportista(Apellido, Nombre, fechaNacimiento, Foto, idPais, idDeporte);
+        Deportista dep = new Deportista(Apellido, Nombre, fechaNacimiento, Foto, Pais, Deporte);
         BD.AgregarDeportista(dep);
         return View("index");
     }
-
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
