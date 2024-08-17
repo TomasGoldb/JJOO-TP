@@ -237,23 +237,33 @@ p{
   transition: filter 0.2s ease-in;
   position: relative;
 }
-.banderas-paises .conjunto-banderas .banderita .banderitaimagen{
+.banderas-paises .conjunto-banderas .banderita a{
+  position: relative;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+.banderas-paises .conjunto-banderas .banderita a .banderitaimagen{
    height:100%;
    width:auto;
    max-width: 100%;
    max-height: 100%;
    transition: opacity 0.1s ease-in;
 }
-.banderas-paises .conjunto-banderas .banderita .banderitanombre{
+.banderas-paises .conjunto-banderas .banderita a .banderitanombre{
   opacity:0;
   font-size: 2vw;
   font-family: "Olympic Sans", Arial, Helvetica, sans-serif;
   position: absolute;
   left: 10px;
+  bottom: -20px;
   transition: opacity 0.1s ease-in;
+  transition: bottom 0.1s ease-in;
 }
 .banderas-paises .conjunto-banderas .banderita:hover .banderitanombre{
   opacity:1;
+  bottom: -10px;  
 }
 .banderas-paises .conjunto-banderas .banderita:hover .banderitaimagen{
   opacity:0.3;
