@@ -4,11 +4,16 @@
 
 
 
-<section>
-    <div>
+<section class="detalle-desportistas">
+    <div class="deta-depor">
         <img src='@ViewBag.deportista.Foto'>
-        <div>
+        <div class="nombre-y-fecha">
             <h1>@ViewBag.deportista.Nombre @ViewBag.deportista.Apellido</h1>
+            <p>@ViewBag.deportista.FechaNacimiento.ToShortDateString()</p>
+        </div>
+        <div class="barra-abajo">
+        <img src='@ViewBag.paisDeportista.Bandera'>
+        <img src='@ViewBag.deporteDeportista.Foto'>
         </div>
     </div>
 </section>

@@ -31,7 +31,7 @@ html {
 *{
   margin: 0px;
   padding:0px; 
-  /*border: 1px solid black;*/
+  border: 1px solid black;
 
 }
 
@@ -271,3 +271,37 @@ p{
   opacity:0.3;
 }
 
+
+
+
+.detalle-desportistas{
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.detalle-desportistas div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.detalle-desportistas .deta-depor img{
+  border-radius: 50%;
+  width: 30%;
+}
+.detalle-desportistas .deta-depor .nombre-y-fecha{
+  margin-top: 2%;
+}
+.detalle-desportistas .deta-depor .nombre-y-fecha h1{
+  font-size: 4vw;
+}
+.detalle-desportistas .deta-depor .nombre-y-fecha p{
+  font-size: 1.3vw;
+}
+
+.detalle-desportistas .deta-depor .barra-abajo img{
+  border-radius: 0px;
+}
