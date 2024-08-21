@@ -61,6 +61,7 @@ header{
   position: fixed;
   width: 100vw;
   top:0;
+  z-index: 1000;
 }
 .navbar-nav{
   display: flex;
@@ -210,6 +211,7 @@ p{
 }
 .todalapagina{
   margin-top:1%;
+  z-index: -1;
 }
 
 .banderas-paises{

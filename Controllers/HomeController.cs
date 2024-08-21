@@ -57,7 +57,7 @@ public class HomeController : Controller
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.deportista = BD.VerInfoDeportista(idDeportista);
-        return View("verdetalledeportista");
+        return View("VerDetalleDeportista");
     }
     public IActionResult VerDetallePais(int paisId)
     {
@@ -76,6 +76,11 @@ public class HomeController : Controller
         BD.AgregarDeportista(dep);
         return View("index");
     }
+    public IActionResult DeportistasPaisesDeportes()
+    {
+        ViewBag.lista = BD.GetDeportistasPaisesDeportes();
+        return View();
+    }  
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
