@@ -57,7 +57,7 @@ public class HomeController : Controller
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.deportista = BD.VerInfoDeportista(idDeportista);
-        return View("verdetalledeportista");
+        return View("VerDetalleDeportista");
     }
     public IActionResult VerDetallePais(int paisId)
     {
