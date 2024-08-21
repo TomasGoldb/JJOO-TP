@@ -147,11 +147,20 @@ p{
 
 }
 
+.container
+{
+  max-width: 90%;
+}
+
+*{
+  
+  border: 1px solid black;
+}
 .columna
 {
-  border: 1px solid black;
+  padding: 1%;
   background-size: cover;
-  height: 250px;
+  height: 300px;
 }
 
 .detallePais
@@ -159,7 +168,7 @@ p{
   margin-top: 5%;
 }
 
-.detallePais h1
+.detallePais h1:not(.tituloCard)
 {
   font-size: 5vw;
   margin-left: 5%;
@@ -183,6 +192,12 @@ p{
 .tituloDeportistas
 {
   margin-top: 32vh;
+}
+
+.tituloCard
+{
+  font-size: 4vw;
+  word-spacing: 0.5vw;
 }
 
 .contenedor{

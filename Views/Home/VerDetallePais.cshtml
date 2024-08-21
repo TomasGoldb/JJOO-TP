@@ -7,16 +7,19 @@
     <p>Fecha de fundación: @ViewBag.pais.FechaFundacion.ToShortDateString()</p>
     <img src=@ViewBag.pais.Bandera>
     <h1 class="tituloDeportistas">Deportistas</h1>
-    <div class="container text-center">
+    <div class="container">
         @{
-            int repeticiones = ViewBag.listaDeportistasPais.Count;
+            Dictionary<int, Deporte> diccionarioDeportes = new Dictionary<int, Deporte>();
+            foreach(Deporte deporte in ViewBag.listaDeportes) diccionarioDeportes.Add(deporte.IdDeporte, deporte); //Para poder llamar al deporte en base a la ID
+            int repeticiones = ViewBag.listaDeportistasPais.Count, deportistaActual = 0;
             for(int i = 0; i < repeticiones; i += 4)
             {
                 if(i < repeticiones && i + 1 >= repeticiones)
                 {
+                    deportistaActual = i;
                     <div class="row">
                         <div class="col columna">
-                            @ViewBag.listaDeportistasPais[i].Nombre
+                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
                         </div>
                     </div>
                 }
@@ -24,30 +27,33 @@
                 {
                     <div class="row">
                         <div class="col-5 columna">
-                            @ViewBag.listaDeportistasPais[i].Nombre
+                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
                         </div>
+                        @{deportistaActual = i + 1;}
                         <div class="col-7 columna">
-                            @ViewBag.listaDeportistasPais[i + 1].Nombre
+
                         </div>
                     </div>
                 }
-                    
                 if(i + 2 < repeticiones && i + 3 < repeticiones)
                 {
+                    deportistaActual = i + 2;
                     <div class="row">
                         <div class="col-7 columna">
-                            @ViewBag.listaDeportistasPais[i + 2].Nombre
+
                         </div>
+                        @{deportistaActual = i + 3;}
                         <div class="col-5 columna">
-                            @ViewBag.listaDeportistasPais[i + 3].Nombre
+
                         </div>
                     </div>
                 }
                 else if (i + 2 < repeticiones && i + 3 >= repeticiones)
                 {
+                    deportistaActual = i + 2;
                     <div class="row">
                         <div class="col columna">
-                            @ViewBag.listaDeportistasPais[i + 2].Nombre
+                        
                         </div>
                     </div>
                 }
@@ -55,3 +61,9 @@
         }
     </div>
 </section>
+<style>
+    .columna
+    {
+        background-image: url(@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto);
+    }
+</style>
