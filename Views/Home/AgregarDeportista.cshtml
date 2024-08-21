@@ -8,13 +8,13 @@
             <div class="contenedor"> 
             <form action='@Url.Action("GuardarDeportista", "Home")' class="formañadir" method="post">
                 <p>Apellido</p>
-                <input class="textoinput" type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"><br>
+                <input class="textoinput" required type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"><br>
                 <p>Nombre</p>
-                <input class="textoinput" type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> <br>
+                <input class="textoinput" required type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> <br>
                 <p>Fecha de nacimiento (ingresar año, mes y día separados entre comas, sin espacios)</p>
-                <input class="textoinput" type="date" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"><br>
+                <input class="textoinput" required type="date" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"><br>
                 <p>Imagen</p>
-                <input class="textoinput" type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
+                <input class="textoinput" required type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
                 <p>País</p>
                 
                 <select name="Pais" class="form-select opcionmultiple" aria-label="Default select example">

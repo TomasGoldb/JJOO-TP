@@ -5,7 +5,7 @@ namespace JJOO_TP.Models
 {
     public static class BD
     {
-        private static string _connectionString { get; set; } = @"Server=DESKTOP-BS9P9C6\SQLEXPRESS;DataBase=JJOO;Trusted_Connection=true;";
+        private static string _connectionString { get; set; } = @"Server=A-PHZ2-LUM-05;DataBase=JJOO;Trusted_Connection=true;";
 
         public static void AgregarDeportista(Deportista dep)
         {
@@ -123,6 +123,17 @@ namespace JJOO_TP.Models
                 idDeporte = db.QueryFirstOrDefault<int>(sql, new {pnombre = nombre});
             }
             return idDeporte;
+        }
+        public static List<DeportistasPaisesDeportes> GetDeportistasPaisesDeportes()
+        {
+            List<DeportistasPaisesDeportes> deportistasPaisesDeportes = new List<DeportistasPaisesDeportes>();
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql= "DeportistasPaisesDeportes";
+                deportistasPaisesDeportes = db.Query<DeportistasPaisesDeportes>(sql, 
+                commandType: System.Data.CommandType.StoredProcedure).ToList();
+            }
+            return deportistasPaisesDeportes;
         }
 
 
