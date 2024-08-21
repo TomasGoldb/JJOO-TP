@@ -79,8 +79,8 @@ namespace JJOO_TP.Models
             Deporte deporte = null;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "select * from deportista where IdDeportista=@pIdDeportista";
-                deporte = db.QueryFirstOrDefault<Deporte>(sql, new { pIdDeportista = idDeporte });
+                string sql = "select * from deporte where IdDeporte=@pIdDeporte";
+                deporte = db.QueryFirstOrDefault<Deporte>(sql, new { pIdDeporte = idDeporte });
             }
             return deporte;
         }
