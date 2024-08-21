@@ -150,6 +150,8 @@ p{
 .columna
 {
   border: 1px solid black;
+  background-size: cover;
+  height: 250px;
 }
 
 .detallePais

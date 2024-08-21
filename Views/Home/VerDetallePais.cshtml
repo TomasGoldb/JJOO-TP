@@ -9,10 +9,10 @@
     <h1 class="tituloDeportistas">Deportistas</h1>
     <div class="container text-center">
         @{
-            double repeticiones = ViewBag.listaDeportistasPais.Count;
-            for(int i = 0; i < repeticiones / 4; i++)
+            int repeticiones = ViewBag.listaDeportistasPais.Count;
+            for(int i = 0; i < repeticiones; i += 4)
             {
-                @if(i * 4 < repeticiones && i * 4 + 1 >= repeticiones)
+                if(i < repeticiones && i + 1 >= repeticiones)
                 {
                     <div class="row">
                         <div class="col columna">
@@ -32,7 +32,7 @@
                     </div>
                 }
                     
-                @if(i * 4 + 2 < repeticiones && i * 4 + 3 < repeticiones)
+                if(i + 2 < repeticiones && i + 3 < repeticiones)
                 {
                     <div class="row">
                         <div class="col-7 columna">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 }
-                else if (i * 4 + 2 < repeticiones && i * 4 + 3 >= repeticiones)
+                else if (i + 2 < repeticiones && i + 3 >= repeticiones)
                 {
                     <div class="row">
                         <div class="col columna">
