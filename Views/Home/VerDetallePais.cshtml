@@ -5,7 +5,7 @@
 <section class="detallePais">
     <h1>@ViewBag.pais.Nombre</h1>
     <p>Fecha de fundación: @ViewBag.pais.FechaFundacion.ToShortDateString()</p>
-    <img src=@ViewBag.pais.Bandera>
+    <img src=@ViewBag.pais.Bandera class="imgPrincipal">
     <h1 class="tituloDeportistas">Deportistas</h1>
     <div class="container">
         @{
@@ -20,6 +20,7 @@
                     <div class="row">
                         <div class="col columna">
                             <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
                         </div>
                     </div>
                 }
@@ -28,10 +29,12 @@
                     <div class="row">
                         <div class="col-5 columna">
                             <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
                         </div>
                         @{deportistaActual = i + 1;}
                         <div class="col-7 columna">
-
+                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
                         </div>
                     </div>
                 }
@@ -40,11 +43,13 @@
                     deportistaActual = i + 2;
                     <div class="row">
                         <div class="col-7 columna">
-
+                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
                         </div>
                         @{deportistaActual = i + 3;}
                         <div class="col-5 columna">
-
+                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
                         </div>
                     </div>
                 }
@@ -53,7 +58,8 @@
                     deportistaActual = i + 2;
                     <div class="row">
                         <div class="col columna">
-                        
+                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
                         </div>
                     </div>
                 }

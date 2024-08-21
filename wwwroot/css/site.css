@@ -28,12 +28,6 @@
 html {
   font-size: 14px;
 }
-*{
-  margin: 0px;
-  padding:0px; 
-  border: 1px solid black;
-
-}
 
 @media (min-width: 768px) {
   html {
@@ -152,15 +146,12 @@ p{
   max-width: 90%;
 }
 
-*{
-  
-  border: 1px solid black;
-}
 .columna
 {
-  padding: 1%;
+  padding: 0.5%;
+  border: 1px solid black;
   background-size: cover;
-  height: 300px;
+  height: 40vh;
 }
 
 .detallePais
@@ -179,7 +170,7 @@ p{
   margin-left: 5%;
 }
 
-.detallePais img
+.imgPrincipal
 {
   position: absolute;
   width: 20vw;
@@ -197,7 +188,13 @@ p{
 .tituloCard
 {
   font-size: 4vw;
-  word-spacing: 0.5vw;
+  word-spacing: 0.3vw;
+}
+
+.imgAtleta
+{
+  height: 27vh;
+  border-radius: 50%;
 }
 
 .contenedor{
