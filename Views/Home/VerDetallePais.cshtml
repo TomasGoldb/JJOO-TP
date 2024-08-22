@@ -19,8 +19,11 @@
                     deportistaActual = i;
                     <div class="row">
                         <div class="col columna">
-                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
-                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            <div class="positionAbsolute">
+                                <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                                <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            </div>
+                            <img src=@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto class="fondo">
                         </div>
                     </div>
                 }
@@ -28,13 +31,19 @@
                 {
                     <div class="row">
                         <div class="col-5 columna">
-                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
-                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            <div class="positionAbsolute">
+                                <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                                <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            </div>
+                            <img src=@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto class="fondo">
                         </div>
                         @{deportistaActual = i + 1;}
                         <div class="col-7 columna">
-                            <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
-                            <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            <div class="positionAbsolute">
+                                <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
+                                <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            </div>
+                            <img src=@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto class="fondo">
                         </div>
                     </div>
                 }
@@ -43,13 +52,19 @@
                     deportistaActual = i + 2;
                     <div class="row">
                         <div class="col-7 columna">
+                            <div class="positionAbsolute">
                             <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
                             <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            </div>
+                            <img src=@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto class="fondo">
                         </div>
                         @{deportistaActual = i + 3;}
                         <div class="col-5 columna">
+                            <div class="positionAbsolute">
                             <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
                             <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            </div>
+                            <img src=@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto class="fondo">
                         </div>
                     </div>
                 }
@@ -58,8 +73,11 @@
                     deportistaActual = i + 2;
                     <div class="row">
                         <div class="col columna">
+                            <div class="positionAbsolute">
                             <h1 class="tituloCard">@ViewBag.listaDeportistasPais[deportistaActual].Nombre @ViewBag.listaDeportistasPais[deportistaActual].Apellido</h1>
                             <img src=@ViewBag.listaDeportistasPais[deportistaActual].Foto class="imgAtleta">
+                            </div>
+                            <img src=@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto class="fondo">
                         </div>
                     </div>
                 }
@@ -67,9 +85,3 @@
         }
     </div>
 </section>
-<style>
-    .columna
-    {
-        background-image: url(@diccionarioDeportes[ViewBag.listaDeportistasPais[deportistaActual].IdDeporte].Foto);
-    }
-</style>

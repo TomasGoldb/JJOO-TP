@@ -148,10 +148,26 @@ p{
 
 .columna
 {
-  padding: 0.5%;
-  border: 1px solid black;
-  background-size: cover;
+  padding: 0 2% 2% 0;
   height: 40vh;
+}
+
+.positionAbsolute
+{
+  position: absolute;
+  padding: 1%;
+  z-index: 1;
+}
+
+.fondo
+{
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  filter: blur(3px);
+  object-fit: cover;
+  z-index: -1;
+  box-shadow: 1px 3px 13px 3px rgb(0 0 0);
 }
 
 .detallePais
@@ -177,7 +193,7 @@ p{
   left: 40vw;
   top: 27vh;
   z-index: -1;
-  box-shadow: 0px 0px 10px rgb(163, 163, 163);
+  box-shadow: 0px 0px 10px 1px rgb(148, 148, 148);
 }
 
 .tituloDeportistas
@@ -189,12 +205,19 @@ p{
 {
   font-size: 4vw;
   word-spacing: 0.3vw;
+  color: white;
+  text-shadow: 0.3vh 0 black, -0.3vh 0 black, 0 0.3vh black, 0 -0.3vh black, 0.15vh 0.15vh black, -0.15vh -0.15vh black, 0.15vh -0.15vh black, -0.15vh 0.15vh black;
+  z-index: 2;
 }
 
 .imgAtleta
 {
-  height: 27vh;
+  height: 21vh;
+  width: 21vh;
+  object-fit: cover;
   border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0px 0px 5px 1px ;
 }
 
 .contenedor{
