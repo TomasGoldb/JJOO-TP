@@ -1,36 +1,39 @@
 @{
     ViewData["Title"] = "Agregar deportista";
 }
-<section>
+<section class="agregar-deportista">
     <div class="text-center">
     <h1 class="display-4">Agregar deportista</h1>
-    
             <div class="contenedor"> 
             <form action='@Url.Action("GuardarDeportista", "Home")' class="formañadir" method="post">
-                <p>Apellido</p>
-                <input class="textoinput" required type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"><br>
-                <p>Nombre</p>
-                <input class="textoinput" required type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> <br>
-                <p>Fecha de nacimiento (ingresar año, mes y día separados entre comas, sin espacios)</p>
-                <input class="textoinput" required type="date" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"><br>
-                <p>Imagen</p>
-                <input class="textoinput" required type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"><br>
-                <p>País</p>
+            <div class="nombre-apellido">
+                <div><p>Apellido:</p>
+                <input class="textoinput" required type="text" name="Apellido" placeholder="Ingrese el apellido del deportista"></div>
+                <div><p>Nombre:</p>
+                <input class="textoinput" required type="text" name="Nombre" placeholder="Ingrese el nombre del deportista"> </div>
+            </div>
+                <div><p>Fecha de nacimiento:</p>
+                <input class="textoinput" required type="date" name="FechaNacimiento" placeholder="Ingrese la fecha de nacimiento del deportista"></div>
+                <div><p>Imagen:</p>
+                <input class="textoinput" required type="text" name="Foto" placeholder="Ingrese el link de una imagen del deportista"></div>
+                <div><p>País:</p>
                 
                 <select name="Pais" class="form-select opcionmultiple" aria-label="Default select example">
+                    <option disabled selected>Elegir país</option>
                     @foreach (Pais p in ViewBag.listaPaises)
                     {
                         <option value="@p.IdPais">@p.Nombre</option>
                     }
-                </select>
-                <p>Deporte</p>
+                </select></div>
+                <div><p>Deporte</p>
                 <select name="Deporte" class="form-select opcionmultiple" aria-label="Default select example">
+                    <option disabled selected>Elegir deporte </option>
                     @foreach (Deporte d in ViewBag.listaDeportes)
                     {
                         <option value="@d.IdDeporte">@d.Nombre</option>
                     }
-                </select>
-                <input type="submit" class="enviarañadirdeportista" value="Enviar">
+                </select></div>
+                <div><input type="submit" class="enviarañadirdeportista" value="Enviar"></div>
             </form>
         </div>
     </div>
