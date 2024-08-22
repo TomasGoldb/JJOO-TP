@@ -6,59 +6,22 @@
 <div class="conjunto-interno">
 <div>
 <h1>JUEGOS OLÍMPICOS</h1>
-<p>Los Juegos Olímpicos son la única competición verdaderamente global, multideportiva y que celebra el deporte en el mundo. Con más de 200 países que participan en más de 400 eventos entre los Juegos de Verano y de Invierno, los Juegos son donde todo el mundo acude a competir, a inspirarse y a estar juntos.</p>
+<p>En los Juegos Olímpicos, se compiten en una amplia variedad de deportes, desde disciplinas tradicionales como atletismo y natación, hasta nuevas incorporaciones como skateboarding, destacando la diversidad y riqueza del evento deportivo más grande del mundo.</p>
 </div>
-<p>Próximos Juegos</p>
-</div>
+<p>Deportes incluídos en los JJOO:</p>
+</div> 
 </section>
-
-<section class="lista-deportes">
+<section class="banderas-paises">
+<div class="conjunto-banderas">
 @{
-    var deportes = ViewBag.Deportes as List<Deporte>;
-}
-
-<div class="alphabet-container">
-    @foreach (var group in deportes.GroupBy(d => d.Nombre[0]).OrderBy(g => g.Key))
-    {
-        <div class="column">
-            <h2>@group.Key</h2>
-            <ul>
-                @foreach (var deporte in group.OrderBy(d => d.Nombre))
-                {
-                    <li>@deporte.Nombre</li>
-                }
-            </ul>
+    foreach(Deporte deporte in ViewBag.listaDeportes){
+        <div class="banderita">
+            <a asp-action="VerDetalleDeporte" asp-controller="Home" asp-route-paisId="@deporte.IdDeporte" class="enlace-bandera">
+                <img class="banderitaimagen" src="@deporte.Foto" alt="@deporte.Nombre" />
+            <p class="banderitanombre">@deporte.Nombre</p>
+            </a>
         </div>
     }
+}
 </div>
-
-<style>
-    .alphabet-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 20px;
-    }
-
-    .column {
-        flex: 1;
-        margin: 0 20px;
-        min-width: 150px;
-    }
-
-    h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-</style>
 </section>
