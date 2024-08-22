@@ -12,8 +12,8 @@
             <p>@ViewBag.deportista.FechaNacimiento.ToShortDateString()</p>
         </div>
         <div class="barra-abajo">
-        <img src='@ViewBag.paisDeportista.Bandera'>
-        <img src='@ViewBag.deporteDeportista.Foto'>
+        <a asp-action="VerDetallePais" asp-controller="Home" asp-route-paisId="@ViewBag.deportista.IdPais"><img src='@ViewBag.paisDeportista.Bandera'></a>
+        <a asp-action="VerDetalleDeporte" asp-controller="Home" asp-route-paisId="@ViewBag.deportista.IdDeporte"><img src='@ViewBag.deporteDeportista.Foto'></a>
         </div>
     </div>
 </section>
