@@ -80,11 +80,6 @@ public class HomeController : Controller
         BD.AgregarDeportista(dep);
         return View("index");
     }
-    public IActionResult DeportistasPaisesDeportes()
-    {
-        ViewBag.lista = BD.GetDeportistasPaisesDeportes();
-        return View();
-    }  
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

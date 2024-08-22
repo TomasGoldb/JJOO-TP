@@ -124,22 +124,6 @@ namespace JJOO_TP.Models
             }
             return idDeporte;
         }
-        public static List<DeportistasPaisesDeportes> GetDeportistasPaisesDeportes()
-        {
-            List<DeportistasPaisesDeportes> deportistasPaisesDeportes = new List<DeportistasPaisesDeportes>();
-            using (SqlConnection db = new SqlConnection(_connectionString))
-            {
-                string sql= "DeportistasPaisesDeportes";
-                deportistasPaisesDeportes = db.Query<DeportistasPaisesDeportes>(sql, 
-                commandType: System.Data.CommandType.StoredProcedure).ToList();
-            }
-            return deportistasPaisesDeportes;
-        }
-
-
-
-
-
 
 
     }
