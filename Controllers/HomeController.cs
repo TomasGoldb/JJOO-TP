@@ -22,11 +22,6 @@ public class HomeController : Controller
     {
         return View();
     }
-
-    public IActionResult Creditos()
-    {
-        return View("creditos");
-    }
     public IActionResult Paises()
     {
         ViewBag.listaPaises = BD.ListarPaises();
@@ -52,7 +47,8 @@ public class HomeController : Controller
     {
         ViewBag.deporte = BD.VerInfoDeporte(idDeporte);
         ViewBag.listaDeportistasDeporte = BD.ListarDeportistasDeporte(idDeporte);
-        return View("verdetalledeporte");
+        ViewBag.listaDeportes = BD.ListarDeportes();
+        return View();
     }
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
@@ -68,10 +64,6 @@ public class HomeController : Controller
         ViewBag.listaDeportistasPais = BD.ListarDeportistasPais(paisId);
         ViewBag.listaDeportes = BD.ListarDeportes();
         return View("verdetallepais");
-    }
-    public IActionResult Historia()
-    {
-        return View("historia");
     }
     public IActionResult GuardarDeportista(string Apellido, string Nombre, string FechaNacimiento, string Foto, int Pais, int Deporte)
     {   

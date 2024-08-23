@@ -13,7 +13,7 @@
         </div>
         <div class="barra-abajo">
         <a asp-action="VerDetallePais" asp-controller="Home" asp-route-paisId="@ViewBag.deportista.IdPais"><img src='@ViewBag.paisDeportista.Bandera'></a>
-        <a asp-action="VerDetalleDeporte" asp-controller="Home" asp-route-paisId="@ViewBag.deportista.IdDeporte"><img src='@ViewBag.deporteDeportista.Foto'></a>
+        <a asp-action="VerDetalleDeporte" asp-controller="Home" asp-route-idDeporte="@ViewBag.deportista.IdDeporte"><img src='@ViewBag.deporteDeportista.Foto'></a>
         </div>
     </div>
 </section>

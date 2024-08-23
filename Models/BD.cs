@@ -5,7 +5,7 @@ namespace JJOO_TP.Models
 {
     public static class BD
     {
-        private static string _connectionString { get; set; } = @"Server=DESKTOP-BS9P9C6\SQLEXPRESS;DataBase=JJOO;Trusted_Connection=true;";
+        private static string _connectionString { get; set; } = @"Server=localhost;DataBase=JJOO;Trusted_Connection=true;";
 
         public static void AgregarDeportista(Deportista dep)
         {

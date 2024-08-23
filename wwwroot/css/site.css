@@ -156,7 +156,7 @@ p{
 .positionAbsolute
 {
   position: absolute;
-  padding: 1%;
+  padding:  1% 1% 1% 1.5%;
   z-index: 1;
 }
 
@@ -165,10 +165,24 @@ p{
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  filter: blur(3px);
+  filter: blur(10px);
   object-fit: cover;
   z-index: -1;
-  box-shadow: 1px 3px 13px 3px rgb(0 0 0);
+  transform: scale(1.01);
+}
+
+.sombra
+{
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 1px 1px 13px 2px rgb(129, 129, 129);
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+.sombra:hover
+{
+  box-shadow: 1px 1px 13px 2px black;
 }
 
 .detallePais
@@ -218,7 +232,7 @@ p{
   object-fit: cover;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0px 0px 5px 1px ;
+  box-shadow: 0px 0px 5px 1px rgb(49, 49, 49);
 }
 
 .contenedor{
@@ -321,6 +335,7 @@ p{
    max-width: 100%;
    max-height: 100%;
    transition: opacity 0.1s ease-in;
+   object-fit: cover;
 }
 .banderas-paises .conjunto-banderas .banderita a .banderitanombre{
   opacity:0;
@@ -365,8 +380,10 @@ p{
 }
 .detalle-desportistas .deta-depor img{
   border-radius: 50%;
-  width: 30%;
-  height: 100%;
+  height: 40vh;
+  width: 40vh;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px 1px rgb(148, 148, 148);
 }
 .detalle-desportistas .deta-depor .nombre-y-fecha{
   margin-top: 2%;
@@ -380,7 +397,14 @@ p{
 
 .detalle-desportistas .deta-depor .barra-abajo img{
   border-radius: 0px;
-  width: 100%;
+  height: 30vh;
+  width: 25vw;
+  object-fit: cover;
+  box-shadow: 1px 1px 13px 2px rgb(129, 129, 129);
+  transition: box-shadow 0.25s ease-in-out;
+}
+.detalle-desportistas .deta-depor .barra-abajo img:hover{
+  box-shadow: 1px 1px 13px 2px rgb(53, 53, 53);
 }
 .detalle-desportistas .deta-depor .barra-abajo a{
   width: 40%;

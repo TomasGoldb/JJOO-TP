@@ -16,7 +16,7 @@
 @{
     foreach(Deporte deporte in ViewBag.listaDeportes){
         <div class="banderita">
-            <a asp-action="VerDetalleDeporte" asp-controller="Home" asp-route-paisId="@deporte.IdDeporte" class="enlace-bandera">
+            <a asp-action="VerDetalleDeporte" asp-controller="Home" asp-route-idDeporte="@deporte.IdDeporte" class="enlace-bandera">
                 <img class="banderitaimagen" src="@deporte.Foto" alt="@deporte.Nombre" />
             <p class="banderitanombre">@deporte.Nombre</p>
             </a>

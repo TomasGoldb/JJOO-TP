@@ -1,0 +1,110 @@
+@{
+    ViewData["Title"] = "Ver Detalle Deporte";
+}
+
+<section class="detallePais">
+    <h1>@ViewBag.deporte.Nombre</h1>
+    <img src=@ViewBag.deporte.Foto class="imgPrincipal">
+    <h1 class="tituloDeportistas">Deportistas</h1>
+    <div class="container">
+        @{
+            Dictionary<int, Deporte> diccionarioDeportes = new Dictionary<int, Deporte>();
+            foreach(Deporte deporte in ViewBag.listaDeportes) diccionarioDeportes.Add(deporte.IdDeporte, deporte); //Para poder llamar al deporte en base a la ID
+            int repeticiones = ViewBag.listaDeportistasDeporte.Count, deportistaActual = 0;
+            for(int i = 0; i < repeticiones; i += 4)
+            {
+                if(i < repeticiones && i + 1 >= repeticiones)
+                {
+                    deportistaActual = i;
+                    <div class="row">
+                        <div class="col columna">
+                            <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=ViewBag.listaDeportistasDeporte[deportistaActual].IdDeportista})'>
+                                <div class="sombra">
+                                    <div class="positionAbsolute">
+                                        <h1 class="tituloCard">@ViewBag.listaDeportistasDeporte[deportistaActual].Nombre @ViewBag.listaDeportistasDeporte[deportistaActual].Apellido</h1>
+                                        <img src=@ViewBag.listaDeportistasDeporte[deportistaActual].Foto class="imgAtleta">
+                                    </div>
+                                    <img src=@diccionarioDeportes[ViewBag.listaDeportistasDeporte[deportistaActual].IdDeporte].Foto class="fondo">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-5 columna">
+                            <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=ViewBag.listaDeportistasDeporte[deportistaActual].IdDeportista})'>
+                                <div class="sombra">
+                                    <div class="positionAbsolute">
+                                        <h1 class="tituloCard">@ViewBag.listaDeportistasDeporte[deportistaActual].Nombre @ViewBag.listaDeportistasDeporte[deportistaActual].Apellido</h1>
+                                        <img src=@ViewBag.listaDeportistasDeporte[deportistaActual].Foto class="imgAtleta">
+                                    </div>
+                                    <img src=@diccionarioDeportes[ViewBag.listaDeportistasDeporte[deportistaActual].IdDeporte].Foto class="fondo">
+                                </div>
+                            </a>
+                        </div>
+                        @{deportistaActual = i + 1;}
+                        <div class="col-7 columna">
+                            <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=ViewBag.listaDeportistasDeporte[deportistaActual].IdDeportista})'>
+                                <div class="sombra">
+                                    <div class="positionAbsolute">
+                                        <h1 class="tituloCard">@ViewBag.listaDeportistasDeporte[deportistaActual].Nombre @ViewBag.listaDeportistasDeporte[deportistaActual].Apellido</h1>
+                                        <img src=@ViewBag.listaDeportistasDeporte[deportistaActual].Foto class="imgAtleta">
+                                    </div>
+                                    <img src=@diccionarioDeportes[ViewBag.listaDeportistasDeporte[deportistaActual].IdDeporte].Foto class="fondo">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+                if(i + 2 < repeticiones && i + 3 < repeticiones)
+                {
+                    deportistaActual = i + 2;
+                    <div class="row">
+                        <div class="col-7 columna">
+                            <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=ViewBag.listaDeportistasDeporte[deportistaActual].IdDeportista})'>
+                                <div class="sombra">
+                                    <div class="positionAbsolute">
+                                        <h1 class="tituloCard">@ViewBag.listaDeportistasDeporte[deportistaActual].Nombre @ViewBag.listaDeportistasDeporte[deportistaActual].Apellido</h1>
+                                        <img src=@ViewBag.listaDeportistasDeporte[deportistaActual].Foto class="imgAtleta">
+                                    </div>
+                                    <img src=@diccionarioDeportes[ViewBag.listaDeportistasDeporte[deportistaActual].IdDeporte].Foto class="fondo">
+                                </div>
+                            </a>
+                        </div>
+                        @{deportistaActual = i + 3;}
+                        <div class="col-5 columna">
+                            <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=ViewBag.listaDeportistasDeporte[deportistaActual].IdDeportista})'>
+                                <div class="sombra">
+                                    <div class="positionAbsolute">
+                                        <h1 class="tituloCard">@ViewBag.listaDeportistasDeporte[deportistaActual].Nombre @ViewBag.listaDeportistasDeporte[deportistaActual].Apellido</h1>
+                                        <img src=@ViewBag.listaDeportistasDeporte[deportistaActual].Foto class="imgAtleta">
+                                    </div>
+                                    <img src=@diccionarioDeportes[ViewBag.listaDeportistasDeporte[deportistaActual].IdDeporte].Foto class="fondo">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+                else if (i + 2 < repeticiones && i + 3 >= repeticiones)
+                {
+                    deportistaActual = i + 2;
+                    <div class="row">
+                        <div class="col columna">
+                            <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=ViewBag.listaDeportistasDeporte[deportistaActual].IdDeportista})'>
+                                <div class="sombra">
+                                    <div class="positionAbsolute">
+                                        <h1 class="tituloCard">@ViewBag.listaDeportistasDeporte[deportistaActual].Nombre @ViewBag.listaDeportistasDeporte[deportistaActual].Apellido</h1>
+                                        <img src=@ViewBag.listaDeportistasDeporte[deportistaActual].Foto class="imgAtleta">
+                                    </div>
+                                    <img src=@diccionarioDeportes[ViewBag.listaDeportistasDeporte[deportistaActual].IdDeporte].Foto class="fondo">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</section>
